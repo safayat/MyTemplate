@@ -18,7 +18,7 @@ myApp.controller('loginController', function($scope, $http, appConfig,$rootScope
 			authService.saveLoginInfo(data);
 			$rootScope.hideHeader = false;
 			$rootScope.hideSideBar = false;
-			window.location.href = appConfig.baseUrl + '/#/client/view';
+			window.location.href = appConfig.baseUrl + '/#/users';
 		}).error(function(data){
 			$scope.errorMsg = "login failed";
 		});

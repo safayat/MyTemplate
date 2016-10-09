@@ -9,6 +9,10 @@ var myApp = angular.module('RoutingApp', ['ngRoute','720kb.datepicker','LocalSto
 				templateUrl: 'pages/login/login.html',
 				controller: 'loginController'
 			})
+			.when('/users', {
+				templateUrl: 'pages/user/userList.html',
+				controller: 'userListController'
+			})
 			.otherwise({
 				redirectTo: '/login'
 			});

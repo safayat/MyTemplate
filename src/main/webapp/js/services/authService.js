@@ -53,43 +53,6 @@ myApp.factory('authService', ['$http','localStorageService','appConfig','$rootSc
 		return admin;
 	};
 
-	authService.getClientFields = function (){
-		var loginInfo = getLoginInfo();
-		console.log(loginInfo);
-		if(loginInfo){
-			var clientFieldAsStr = loginInfo.selectedClientFields;
-			if(!clientFieldAsStr || clientFieldAsStr == ""){
-				return undefined;
-			}
-			var clientFields = {};
-			var splittedClientFields = clientFieldAsStr.split(" ");
-			console.log(clientFieldAsStr);
-			for(var i=0;i<splittedClientFields.length;i++){
-				clientFields[splittedClientFields[i]] = true;
-			}
-			return clientFields;
-		}
-		return undefined;
-	};
-
-	authService.getTicketFields = function (){
-		var loginInfo = getLoginInfo();
-		console.log(loginInfo);
-		if(loginInfo){
-			var ticketFieldAsStr = loginInfo.selectedTicketFields;
-			if(!ticketFieldAsStr || ticketFieldAsStr == ""){
-				return undefined;
-			}
-			var ticketFields = {};
-			var splittedTicketFields = ticketFieldAsStr.split(" ");
-			console.log(ticketFieldAsStr);
-			for(var i=0;i<splittedTicketFields.length;i++){
-				ticketFields[splittedTicketFields[i]] = true;
-			}
-			return ticketFields;
-		}
-		return undefined;
-	};
 
 /*
 	authService.isAdmin = function (){

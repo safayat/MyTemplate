@@ -55,35 +55,7 @@ public class UserController {
 		return response;
 	}
 
-	@RequestMapping(value="/private/api/client/fields", method = RequestMethod.POST)
-	public ResponseEntity updateClientFields(
-			@RequestBody String clientFields
-			,Principal principal) {
-		try {
-			User user = userService.getUserByUserName(principal.getName());
-			userService.updateClientFieldsView(clientFields, user.getId());
-			return new ResponseEntity<String>("", HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
 
-
-	}
-
-	@RequestMapping(value="/private/api/ticket/fields", method = RequestMethod.POST)
-	public ResponseEntity updateTicketFields(
-			@RequestBody String ticketFields
-			,Principal principal) {
-		try {
-			User user = userService.getUserByUserName(principal.getName());
-			userService.updateTicketFieldsView(ticketFields, user.getId());
-			return new ResponseEntity<String>("", HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-
-
-	}
 	@RequestMapping(value="/private/api/search/name", method = RequestMethod.GET)
 	public ResponseEntity getUserByName(
 			@RequestParam("username") String userName
