@@ -1,0 +1,17 @@
+<script>
+console.log(window.location);
+console.log(window.navigator);
+
+    String.prototype.startsWith = function(prefix){
+        return this.slice(0,prefix.length) == prefix;
+    }
+    String.prototype.endsWith = function(suffix){
+        return this.slice(this.length - suffix.length) == suffix;
+    }
+    console.log("safayat".startsWith("safe"));
+    console.log("safayat".substring(0,1));
+    console.log("safayat".substring(1,1));
+    console.log(123e4);
+    console.log("safayat".slice("safayat".length - "yat".length));
+
+</script>
